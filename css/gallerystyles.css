@@ -2,14 +2,19 @@
     padding: 0;
     margin: 0;
 }
-
-
 body{
-    color: aquamarine;
+    color: lightslategray;
     background-color: #15181e;
 }
 .name{
+    margin: 10px;
     color: linen;
+    font-size: 30px;
+    font-family: Arial;
+}
+nav{
+    margin-bottom: 5px;
+
 }
 a{
     text-decoration: none;

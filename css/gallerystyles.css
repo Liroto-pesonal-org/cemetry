@@ -2,19 +2,23 @@
     padding: 0;
     margin: 0;
 }
+html{
+    font-family: Arial;
+}
 body{
     color: lightslategray;
     background-color: #15181e;
 }
 .name{
-    margin: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
     color: linen;
     font-size: 30px;
     font-family: Arial;
 }
 nav{
-    margin-bottom: 5px;
-
+    position: relative; bottom: 45px; left: 80%;
+    font-size: 20px;
 }
 a{
     text-decoration: none;

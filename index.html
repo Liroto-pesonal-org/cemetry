@@ -11,10 +11,10 @@
 </head>
 <body>
 <div class="menu" id="menuLink">
-    <a href="" class="nameLink">Название</a>
+    <a href="javascript:;" class="nameLink">Название</a>
     <div class="menuLinks">
-        <a href="" class="galleryLink">Галерея</a>
-        <a href="#services">Услуги</a>
+        <a href="javascript:;" class="galleryLink">Галерея</a>
+        <a href="javascript:;">Услуги</a>
     </div>
 </div>
 
@@ -49,14 +49,17 @@
 <!--Стрелка вверх-->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $('a.name').click(function(){
+    $('a.nameLink').click(function(){
         positionabout = $('#about').offset().top - $('#menuLink').height(); // Position of #about - nav height = correct position
-        $("html, body").animate({scrollTop:positionabout}, '500', 'swing');
-        print(hui)
+        $([document.documentElement, document.body]).animate({
+            scrollTop: positionabout
+        }, 500);
     })
     $('a.galleryLink').click(function(){
         positionport = $('#galleryStart').offset().top - $('#menuLink').height();
-        $("html, body").animate({scrollTop:positionport}, '500', 'swing');
+        $([document.documentElement, document.body]).animate({
+            scrollTop: positionport
+        }, 500);
     })
 </script>
 </body>

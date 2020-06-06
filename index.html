@@ -55,8 +55,7 @@
         print(hui)
     })
     $('a.galleryLink').click(function(){
-        positionport = $('#galleryStart').offset().top - $('#menu').height();
-        alert(positionport)
+        positionport = $('#galleryStart').offset().top - $('#menuLink').height();
         $("html, body").animate({scrollTop:positionport}, '500', 'swing');
     })
 </script>

@@ -43,6 +43,7 @@ nav{
     margin-right: 1vw;
     text-align: right;
 }
+
 .textWithImage{
     display: flex;
     flex-wrap: nowrap;
@@ -50,16 +51,21 @@ nav{
     justify-content: center;
     align-items: center;
     height: 25vw;
-    margin-right: 10vw;
-    margin-left: 10vw;
     margin-bottom: 1vw;
     border-bottom: 2px solid #ccc;
+}
+@media only screen and (min-device-width: 1440px) {
+    .textWithImage{
+        margin-right: 10vw;
+        margin-left: 10vw;
+    }
 }
 .textWithImage strong{
     flex: 1;
     margin: auto;
     text-align: justify;
     text-justify: kashida;
+    font-size: 2.5vw;
     /*color: purple;*/
     padding: 1vw;
 }

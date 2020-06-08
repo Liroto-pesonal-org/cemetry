@@ -13,7 +13,7 @@ body{
 }
 h1{
     font-family: 'Playfair Display SC', serif;
-    font-size: 7vw;
+    font-size: 4vw;
 }
 .menu {
     z-index: 1;
@@ -24,6 +24,17 @@ h1{
     overflow: hidden;
     background-color: #101826;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+input{
+    width: 20vw;
+    height: 5vh;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 .menu a {
     float: left;

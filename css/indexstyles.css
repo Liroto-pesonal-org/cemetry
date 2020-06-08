@@ -61,7 +61,7 @@ nav{
         margin-left: 10vw;
     }
 }
-@media only screen and (max-device-width: 1440px) {
+@media only screen and (max-device-width: 1153px) {
     .menu a {
         font-size: 3.5vw;
     }

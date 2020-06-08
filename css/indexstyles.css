@@ -112,39 +112,34 @@ hr {
 h1 {
     text-align: center;
 }
-/*#cemetaries ul,*/
-/*!*#cemetaries li {*!*/
-/*!*    margin: 0;*!*/
-/*!*    margin-bottom: 10px;*!*/
-/*!*    padding: 0;*!*/
-/*!*    list-style-type: none;*!*/
-/*!*    text-align: center;*!*/
-
-/*!*}*!*/
-/*#cemetaries li {*/
-/*    display: inline-block;*/
-/*    width: 300px;*/
-/*    height: 300px;*/
-/*    position: relative;*/
-/*    overflow: hidden;*/
-/*}*/
 #cemetaries{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .cemetary{
+    background-color: darkslateblue;
     justify-content: center;
     align-items: center;
-    width: 2vw;
-    height: 2vw;
-}
-.imageLink{
-    max-width: 100%;
-    height: 95%;
-    flex: 1;
+    width: 30vw;
+    flex: 0 5 auto;
+    flex-grow: 0;
     flex-basis: content;
     margin: auto;
+    border: #ccffff solid 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+.cemetary a img{
+    text-align: center;
+    width: 25vw;
+    height: 20vw;
+}
+.cemetary h3{
+    padding-left: 1vw;
+}
+.cemetary span{
     padding: 1vw;
 }
 .descr {

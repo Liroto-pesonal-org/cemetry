@@ -103,6 +103,9 @@ hr {
     color: olivedrab;
     height: 2px;
 }
+h1 {
+    text-align: center;
+}
 .portfolio ul,
 .portfolio li {
     margin: 0;
@@ -112,12 +115,14 @@ hr {
 .portfolio li {
     display: inline-block;
     width: 300px;
+    height: 225px;
     position: relative;
     overflow: hidden;
 }
 .portfolio img {
     max-width: 100%;
     display: block;
+    margin: 0px 10px;
 }
 .descr {
     position: absolute;

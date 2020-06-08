@@ -55,7 +55,13 @@ nav{
     margin-right: 1vw;
     text-align: right;
 }
-
+.searchBar{
+    display: flex;
+    flex-wrap: nowrap;
+    /*position: relative;*/
+    justify-content: center;
+    align-items: center;
+}
 .textWithImage{
     display: flex;
     flex-wrap: nowrap;

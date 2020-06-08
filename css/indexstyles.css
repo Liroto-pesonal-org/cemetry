@@ -16,6 +16,7 @@ h1{
     font-size: 7vw;
 }
 .menu {
+    z-index: 1;
     position: sticky;
     top: 0;
     padding:10px 0px 10px 0px;
@@ -123,6 +124,7 @@ h1 {
     overflow: hidden;
 }
 .portfolio img {
+    z-index: 2;
     max-width: 100%;
     display: block;
 }

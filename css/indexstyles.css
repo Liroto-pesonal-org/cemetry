@@ -63,7 +63,7 @@ nav{
 }
 @media only screen and (max-device-width: 1153px) {
     .menu a {
-        font-size: 3.5vw;
+        font-size: 3vw;
     }
 }
 .textWithImage strong{

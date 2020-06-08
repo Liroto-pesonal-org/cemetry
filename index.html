@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/indexstyles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display+SC&display=swap"
+          rel="stylesheet">
     <title>Кладбища</title>
 
 </head>
@@ -19,15 +20,16 @@
 
 <div class="text" id="about">
     <h1 id="aboutUs">О нас</h1>
-    <div class = "textWithImage">
-            <strong>Умер? Добро пожаловать! тут будет текст я сейчас не могу ничего придумтаь но он тут есть клдабищей смэрть гг пресс ф ту пей респектс </strong>
+    <div class="textWithImage">
+        <strong>Умер? Добро пожаловать! тут будет текст я сейчас не могу ничего придумтаь но он тут есть клдабищей
+            смэрть гг пресс ф ту пей респектс </strong>
         <img src="img/pressf.jpeg" alt="Girl in a jacket">
     </div>
-    <div class = "textWithImage">
-    <img src="img/horse.JPG" alt="Girl in a jacket">
+    <div class="textWithImage">
+        <img src="img/horse.JPG" alt="Girl in a jacket">
         <strong>Закопаем даже лошадь! </strong>
     </div>
-    <div class = "textWithImage">
+    <div class="textWithImage">
         <strong>За дополнительную плату можем устроить похороны по-викингски</strong>
         <img src="img/viking.JPG" alt="Girl in a jacket">
     </div>
@@ -40,6 +42,10 @@
             <li><span class="descr">Гладковское кладбище</span><img src="img/gladk.jpg" alt="Alt"></li>
             <li><span class="descr">Чулковское (Алексеевское) кладбище</span><img src="img/chulk.jpg" alt="Alt"></li>
             <li><span class="descr">Южное кладбище</span><img src="img/south.jpg" alt="Alt"></li>
+            <li><span class="descr">Мушкетовское кладбище</span><img src="img/mushket.jpg" alt="Alt"></li>
+            <li><span class="descr">Гладковское кладбище</span><img src="img/gladk.jpg" alt="Alt"></li>
+            <li><span class="descr">Чулковское (Алексеевское) кладбище</span><img src="img/chulk.jpg" alt="Alt"></li>
+            <li><span class="descr">Южное кладбище</span><img src="img/south.jpg" alt="Alt"></li>
         </ul>
     </div>
 </div>
@@ -47,13 +53,13 @@
 <!--Стрелка вверх-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $('a.nameLink').click(function(){
+    $('a.nameLink').click(function () {
         positionabout = $('#about').offset().top - $('#menuLink').height(); // Position of #about - nav height = correct position
         $([document.documentElement, document.body]).animate({
             scrollTop: positionabout
         }, 500);
     })
-    $('a.galleryLink').click(function(){
+    $('a.galleryLink').click(function () {
         positionport = $('#galleryStart').offset().top - $('#menuLink').height();
         $([document.documentElement, document.body]).animate({
             scrollTop: positionport

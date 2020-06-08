@@ -109,8 +109,10 @@ h1 {
 .portfolio ul,
 .portfolio li {
     margin: 0;
+    margin-bottom: 10px;
     padding: 0;
     list-style-type: none;
+    text-align: center;
 }
 .portfolio li {
     display: inline-block;
@@ -122,7 +124,7 @@ h1 {
 .portfolio img {
     max-width: 100%;
     display: block;
-    margin: 0px 10px;
+    margin-left: 10px;
 }
 .descr {
     position: absolute;

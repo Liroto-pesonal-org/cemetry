@@ -5,6 +5,16 @@
 }
 html{
     font-family: 'Playfair Display SC', serif;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/8a/CalvaryCemeteryQueens_edit.jpg");
+
+    /* Set a specific height */
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 body{
     vertical-align: middle;
@@ -142,7 +152,7 @@ h1 {
     justify-content: center;
 }
 .cemetary{
-    background-color: darkslateblue;
+    background-color:rgba(1, 1, 1, 0.5);
     justify-content: center;
     align-items: center;
     width: 30vw;

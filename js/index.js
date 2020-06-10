@@ -17,6 +17,16 @@ function servicesclick() {
     }, 500);
 };
 
+$(function () {
+    $.getJSON('/test2/obj/data/base.json', function (data) {
+        // alert(data);
+
+        for (var key in data['items']) {
+            alert(" "+ key + " "+data[key]);
+        }
+    });
+});
+
 var countries = ["Новодевичье кладбщие", "Ново-игнатьевское кладбище","Игнатьевское кладбище"]
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,

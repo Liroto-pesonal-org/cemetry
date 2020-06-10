@@ -17,15 +17,14 @@ function servicesclick() {
     }, 500);
 };
 
-$(function () {
-    $.getJSON('/test2/obj/data/base.json', function (data) {
-        // alert(data);
-
-        for (var key in data['items']) {
+function getCemetaries() {
+    $.getJSON('cemetaries.json', function (data) {
+        alert(data);
+        for (var key in data['cemetaries']) {
             alert(" "+ key + " "+data[key]);
         }
     });
-});
+};
 
 var countries = ["Новодевичье кладбщие", "Ново-игнатьевское кладбище","Игнатьевское кладбище"]
 function autocomplete(inp, arr) {

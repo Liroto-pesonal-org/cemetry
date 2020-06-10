@@ -3,10 +3,15 @@ function nameclick() {
     $([document.documentElement, document.body]).animate({
         scrollTop: positionabout
     }, 500);
-    alert("asdasdasd");
 };
 function galleryclick() {
     positionport = $('#galleryStart').offset().top - $('#menuLink').height();
+    $([document.documentElement, document.body]).animate({
+        scrollTop: positionport
+    }, 500);
+};
+function servicesclick() {
+    positionport = $('#servicesStart').offset().top - $('#menuLink').height();
     $([document.documentElement, document.body]).animate({
         scrollTop: positionport
     }, 500);

@@ -1,10 +1,11 @@
-function name() {
+function nameclick() {
     positionabout = $('#about').offset().top - $('#menuLink').height(); // Position of #about - nav height = correct position
     $([document.documentElement, document.body]).animate({
         scrollTop: positionabout
     }, 500);
+    alert("asdasdasd");
 };
-function gallery() {
+function galleryclick() {
     positionport = $('#galleryStart').offset().top - $('#menuLink').height();
     $([document.documentElement, document.body]).animate({
         scrollTop: positionport

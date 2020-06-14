@@ -81,6 +81,8 @@ input:focus{
 }
 .searchButton{
     margin-left: 1vh;
+    color: #b1b06b;
+    font-family: 'Playfair Display SC', serif;
 }
 .search{
     display: flex;

@@ -1,5 +1,6 @@
 function nameclick() {
-    positionabout = $('#about').offset().top - $('#menuLink').height(); // Position of #about - nav height = correct position
+    positionabout = $('#search').offset().top - $('#menuLink').height(); // Position of #search
+    // - nav height = correct position
     $([document.documentElement, document.body]).animate({
         scrollTop: positionabout
     }, 500);

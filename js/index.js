@@ -1,5 +1,5 @@
 function nameclick() {
-    positionabout = $('#start').offset().top - $('#menuLink').height(); // Position of #search
+    positionabout = $('#aboutUs').offset().top - $('#menuLink').height(); // Position of #search
     // - nav height = correct position
     $([document.documentElement, document.body]).animate({
         scrollTop: positionabout
@@ -18,16 +18,16 @@ function servicesclick() {
     }, 500);
 };
 
-var jsonData;
 function getCemetaries() {
     $.getJSON('cemetaries.json', function (data) {
+        alert(data);
         for (var key in data['cemetaries']) {
-            console.log(key + " "+ data[key]);
+            alert(" "+ key + " "+data[key]);
         }
     });
 };
 
-var cemetaries = ["Новодевичье кладбщие", "Ново-игнатьевское кладбище","Игнатьевское кладбище"]
+var countries = ["Новодевичье кладбщие", "Ново-игнатьевское кладбище","Игнатьевское кладбище"]
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
@@ -125,4 +125,4 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 }
-autocomplete(document.getElementById("myInput"), cemetaries);
+autocomplete(document.getElementById("myInput"), countries);

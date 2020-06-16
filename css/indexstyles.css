@@ -11,10 +11,8 @@ body{
     color: #b1b06b;
     background-color: #101820;
     /*background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/8a/CalvaryCemeteryQueens_edit.jpg");*/
-
     /* Set a specific height */
     height: 500px;
-
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -27,11 +25,12 @@ h1{
 }
 .menu {
     z-index: 1;
-    position: sticky;
+    position: fixed;
     top: 0;
     padding:10px 0px 10px 0px;
     margin: 0 auto;
     overflow: hidden;
+    width: 100%;
     background-color: #101826;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -184,4 +183,23 @@ h1 {
 }
 .cemetary span{
     padding: 1vw;
+}
+/*.descr {*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    !*width: 300px;*!*/
+/*    !*height: 300px;*!*/
+/*    background-color: rgba(0,0,0,.6);*/
+/*    color: gainsboro;*/
+/*    padding-top: 80px;*/
+/*    text-align: center;*/
+/*    opacity: 0;*/
+/*    top: 70%;*/
+/*    -webkit-transition: all .4s;*/
+/*    -o-transition: all .4s;*/
+/*    transition: all .4s;*/
+/*}*/
+#cemetaries li:hover .descr{
+    opacity: 1;
+    top: 0;
 }

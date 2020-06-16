@@ -1,5 +1,5 @@
 function nameclick() {
-    positionabout = $('#search').offset().top - $('#menuLink').height(); // Position of #search
+    positionabout = $('#start').offset().top - $('#menuLink').height(); // Position of #search
     // - nav height = correct position
     $([document.documentElement, document.body]).animate({
         scrollTop: positionabout
@@ -22,7 +22,7 @@ var jsonData;
 function getCemetaries() {
     $.getJSON('cemetaries.json', function (data) {
         for (var key in data['cemetaries']) {
-            alert(" "+ key + " "+data[key]);
+            console.log(key + " "+ data[key]);
         }
     });
 };

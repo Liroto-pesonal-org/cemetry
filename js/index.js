@@ -18,16 +18,16 @@ function servicesclick() {
     }, 500);
 };
 
+var jsonData;
 function getCemetaries() {
     $.getJSON('cemetaries.json', function (data) {
-        alert(data);
         for (var key in data['cemetaries']) {
             alert(" "+ key + " "+data[key]);
         }
     });
 };
 
-var countries = ["Новодевичье кладбщие", "Ново-игнатьевское кладбище","Игнатьевское кладбище"]
+var cemetaries = ["Новодевичье кладбщие", "Ново-игнатьевское кладбище","Игнатьевское кладбище"]
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
@@ -125,4 +125,4 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 }
-autocomplete(document.getElementById("myInput"), countries);
+autocomplete(document.getElementById("myInput"), cemetaries);

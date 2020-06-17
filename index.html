@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,11 @@
           rel="stylesheet">
     <title>Кладбища</title>
 </head>
-<body>
-<div class="menu" id="menuLink" >
 
+<body>
+
+<!-- Menu -->
+<div class="menu" id="menuLink" >
     <a href="javascript:void(0);" class="nameLink" onclick="nameclick();">Чистилище имени Джостара</a>
     <div class="menuLinks">
 
@@ -21,18 +24,20 @@
     </div>
 </div>
 
+<!-- Search -->
 <div class="text">
     <h1 id="start">Поиск кладбища</h1>
     <div class="search">
         <div class="searchBar">
             <input id="myInput" type="text" name="myCountry" placeholder="Кладбище">
+            <script>autocomplete(document.getElementById("myInput"), cemetariesArray)</script>
             <a href="javascript:void(0);" style="Color:#ccffff" onclick="getCemetaries()">Искать</a>
         </div>
-
     </div>
     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A88aa4456e23f519799081769f5384dd6a7c06a80d5d43d0bae3c0d0c76e08fcf&amp;width=80%&amp;height=500&amp;lang=ru_RU&amp;scroll=true&apikey=9169a804-534a-4589-842d-99950a43fcd2"></script>
 </div>
 
+<!-- Gallery -->
 <div class="text" id="galleryStart">
     <h1 id="gallery">Кладбища</h1>
     <div id="cemetaries">
@@ -47,6 +52,7 @@
     </div>
 </div>
 
+<!-- Order -->
 <div class="contact" id = "servicesStart">
     <div class="contact_misc visible-first">
         <div id="contact_115">
@@ -71,5 +77,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

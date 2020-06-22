@@ -1,5 +1,5 @@
 function nameclick() {
-    positionabout = $('#aboutUs').offset().top - $('#menuLink').height(); // Position of #search
+    positionabout = $('#start').offset().top - $('#menuLink').height(); // Position of #search
     // - nav height = correct position
     $([document.documentElement, document.body]).animate({
         scrollTop: positionabout
@@ -27,7 +27,7 @@ function getCemetaries() {
     });
 };
 
-var countries = ["Новодевичье кладбщие", "Ново-игнатьевское кладбище","Игнатьевское кладбище"]
+var cemetariesArray = ["Новодевичье кладбщие", "Ново-игнатьевское кладбище","Игнатьевское кладбище"]
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
@@ -124,5 +124,3 @@ function autocomplete(inp, arr) {
     document.addEventListener("click", function (e) {
         closeAllLists(e.target);
     });
-}
-autocomplete(document.getElementById("myInput"), countries);

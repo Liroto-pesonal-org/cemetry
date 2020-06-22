@@ -71,12 +71,6 @@ nav{
     align-items: center;
     margin-bottom: 1vh;
 }
-input{
-    border: 1px solid #ccc;
-}
-input:focus{
-    outline: 2px solid #b1b06b;
-}
 .searchButton{
     margin-left: 1vh;
     color: #b1b06b;
@@ -85,17 +79,14 @@ input:focus{
 .search{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: center;4
     align-items: center;
 }
-.textWithImage{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    height: 25vw;
-    margin-bottom: 1vw;
-    border-bottom: 2px solid #ccc;
+input{
+    border: 1px solid #ccc;
+}
+input:focus{
+    outline: 2px solid #b1b06b;
 }
 @media only screen and (min-device-width: 1440px) {
     .textWithImage{
@@ -107,6 +98,15 @@ input:focus{
     .menu a {
         font-size: 3vw;
     }
+}
+.textWithImage{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 25vw;
+    margin-bottom: 1vw;
+    border-bottom: 2px solid #ccc;
 }
 .textWithImage strong{
     flex: 1;
@@ -184,21 +184,6 @@ h1 {
 .cemetary span{
     padding: 1vw;
 }
-/*.descr {*/
-/*    position: absolute;*/
-/*    left: 0;*/
-/*    !*width: 300px;*!*/
-/*    !*height: 300px;*!*/
-/*    background-color: rgba(0,0,0,.6);*/
-/*    color: gainsboro;*/
-/*    padding-top: 80px;*/
-/*    text-align: center;*/
-/*    opacity: 0;*/
-/*    top: 70%;*/
-/*    -webkit-transition: all .4s;*/
-/*    -o-transition: all .4s;*/
-/*    transition: all .4s;*/
-/*}*/
 #cemetaries li:hover .descr{
     opacity: 1;
     top: 0;

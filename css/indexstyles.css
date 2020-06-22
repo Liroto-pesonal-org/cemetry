@@ -11,3 +11,7 @@ body{
     color: #74797f;
     background-color: #101820;
 }
+.map{
+display: flex;
+justify-content: center;
+}

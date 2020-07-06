@@ -29,11 +29,11 @@ loadCemeteries()
 function append(cemetery) {
     $("#developer_note").append(
         "<div class=\"cards mx-auto mx-sm-auto mx-sm-4 m-4\" style=\"\">" +
-        "<div class=\"flex-column d-inline-flex justify-content-center bg-dark shadow overflow-hidden\" style=\"height: 18rem;width: 20rem;\">" +
+        "<div class=\"border border-warning flex-column d-inline-flex justify-content-center bg-dark shadow overflow-hidden\" style=\"height: 18rem;width: 20rem;\">" +
         "<img src=\""+cemetery.image+"\"class=\"card-img-top m-0\" style=\"height: 12rem; width: 100%\">"+
-        "<div class=\"p-2 flex-fill flex-grow-1 bd-highlight text-light text-uppercase text-monospace\">"+cemetery.name+"</div>" +
+        "<div class=\"p-2 flex-fill flex-grow-1 bd-highlight text-light lead font-weight-normal text-uppercase\">"+cemetery.name+"</div>" +
         "<div class=\"p-2 flex-fill flex-grow-1 bd-highlight mb-auto\">" +
-        "<a class=\"btn btn-primary\" data-toggle=\"modal\" href=#"+cemetery.link+" >Текст кнопки</a>" +
+        "<a class=\"btn btn-warning\" data-toggle=\"modal\" href=#"+cemetery.link+" >Текст кнопки</a>" +
         "</div>" +
         "</div>" +
         "</div>");

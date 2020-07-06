@@ -1,144 +1,84 @@
-function nameclick() {
-    positionabout = $('#start').offset().top - $('#menuLink').height(); // Position of #search
-    // - nav height = correct position
-    $([document.documentElement, document.body]).animate({
-        scrollTop: positionabout
-    }, 500);
-};
-function galleryclick() {
-    positionport = $('#galleryStart').offset().top - $('#menuLink').height();
-    $([document.documentElement, document.body]).animate({
-        scrollTop: positionport
-    }, 500);
-};
-function servicesclick() {
-    positionport = $('#servicesStart').offset().top - $('#menuLink').height();
-    $([document.documentElement, document.body]).animate({
-        scrollTop: positionport
-    }, 500);
-};
+$("#developer_note").css("margin-top", $("#topbar").height());
+$('#collapsible').on('shown.bs.collapse', function () {
+    $("#developer_note").css("margin-top", $("#topbar").height());
+})
+$('#collapsible').on('hidden.bs.collapse', function () {
+    $("#developer_note").css("margin-top", $("#topbar").height());
+})
+function scrollTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+$(".btn.btn-primary").click(function(){sendEmail(); return false; });
+$('#linkTop').click(function(){scrollTop(); return false; });
+let data = new Array();
+function loadCemeteries() {
+    $.getJSON('assets/cemeteries.json', function (json) {
+        data = json.cemeteries;
+    })
+        .error(function() {
+            console.log('error: JSON not loaded');
+        })
+        .done(function() {
+            console.log( "JSON loaded!" );
+            for (var i = 0; i < data.length; i++) {
+                append(data[i])
+            }
+        });
+}
+loadCemeteries()
+function append(cemetery) {
+    $("#developer_note").append(
+        "<div class=\"cards mx-auto mx-sm-auto mx-sm-4 m-4\" style=\"\">" +
+        "<div class=\"flex-column d-inline-flex justify-content-center bg-light shadow overflow-hidden\" style=\"height: 18rem;width: 20rem;\">" +
+        "<img src=\""+cemetery.image+"\"class=\"card-img-top m-0\" style=\"height: 12rem; width: 100%\">"+
+        "<div class=\"p-2 flex-fill flex-grow-1 bd-highlight\">"+cemetery.name+"</div>" +
+        "<div class=\"p-2 flex-fill flex-grow-1 bd-highlight mb-auto\">" +
+        "<a class=\"btn btn-primary\" data-toggle=\"modal\" href=#"+cemetery.link+" >Текст кнопки</a>" +
+        "</div>" +
+        "</div>" +
+        "</div>");
+    createModals(cemetery)
+}
+function createModals(cemetery) {
+    $("#modals").append(
+        "<div class=\"modal fade\" id="+cemetery.link+" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">"+
+        "  <div class=\"modal-dialog\">"+
+        "<div class=\"modal-content\">"+
+        "<div class=\"modal-header\">"+
+        " <h5 class=\"modal-title\" id=\"exampleModalLabel\">Заказать</h5>"+
+        " <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">"+
+        " <span aria-hidden=\"true\"></span>"+
+         " </button>"+
+        "  </div>"+
+        "  <div class=\"modal-body d-flex justify-content-center border-bottom\">"+
+        "  <img src=\""+cemetery.image+"\" class=\"img-fluid ml-auto\" alt=\"Responsive image\" style=\"width: 25%; height: 20%\">"+
+        "  <h3 class=\"align-self-center pl-2 mr-auto\">"+cemetery.name+"</h3>"+
+        "  </div>"+
+        " <div class=\"modal-body d-flex justify-content-center flex-column\">"+
+        " <h4 class=\"align-self-center mx-auto\">Информация:</h4>"+
+        " <input id=\"info\" type=\"text\" class=\"form-control\" aria-describedby=\"inputGroup-sizing-sm\">"+
+        " </div>"+
+        "  <div class=\"modal-footer\">"+
+        "  <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Закрыть</button>"+
+        "  <button id=\"sendInfo\" type=\"button\" class=\"btn btn-primary\">Отправить</button>"+
+        "  </div>"+
+        " </div>"+
+        " </div>"+
+        "  </div>"
+    );
+}
 
-$(function topscroll() {
-  	$(window).scroll(function() {
-  		if($(this).scrollTop() != 0) {
-  			$('#toTop').fadeIn();
-  		}
-  		else {
-  			$('#toTop').fadeOut();
-  		}
-  	});
-  	$('#toTop').click(function() {
-  		$('body,html').animate({scrollTop:0},700);
-  	});
+
+function filter(text, cemetery) {
+    return cemetery.includes(text);
+}
+$(document).ready(function(){
+    $("#searchBar").on("input", function(){
+        $("#developer_note").html("");
+        for (var i = 0; i < data.length; i++) {
+            if(filter($(this).val().toLowerCase(), data[i].name.toLowerCase())){
+                append(data[i])
+            }
+        }
+    });
 });
- 
-
-
-
-
-function getCemetaries() {
-    $.getJSON('cemetaries.json', function (data) {
-        alert(data);
-        for (var key in data['cemetaries']) {
-            alert(" "+ key + " "+data[key]);
-        }
-    });
-};
-
-var cemetariesArray = ["Новодевичье кладбщие", "Ново-игнатьевское кладбище","Игнатьевское кладбище"]
-function autocomplete(inp, arr) {
-    /*the autocomplete function takes two arguments,
-    the text field element and an array of possible autocompleted values:*/
-    var currentFocus;
-    /*execute a function when someone writes in the text field:*/
-    inp.addEventListener("input", function(e) {
-        var a, b, i, val = this.value;
-        /*close any already open lists of autocompleted values*/
-        closeAllLists();
-        if (!val) { return false;}
-        currentFocus = -1;
-        /*create a DIV element that will contain the items (values):*/
-        a = document.createElement("DIV");
-        a.setAttribute("id", this.id + "autocomplete-list");
-        a.setAttribute("class", "autocomplete-items");
-        a.setAttribute("style", "width:21vw; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);");
-        /*append the DIV element as a child of the autocomplete container:*/
-        this.parentNode.appendChild(a);
-        /*for each item in the array...*/
-        for (i = 0; i < arr.length; i++) {
-            /*check if the item starts with the same letters as the text field value:*/
-            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-                /*create a DIV element for each matching element:*/
-                b = document.createElement("DIV");
-                /*make the matching letters bold:*/
-                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-                b.innerHTML += arr[i].substr(val.length);
-                /*insert a input field that will hold the current array item's value:*/
-                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-                /*execute a function when someone clicks on the item value (DIV element):*/
-                b.addEventListener("click", function(e) {
-                    /*insert the value for the autocomplete text field:*/
-                    inp.value = this.getElementsByTagName("input")[0].value;
-                    /*close the list of autocompleted values,
-                    (or any other open lists of autocompleted values:*/
-                    closeAllLists();
-                });
-                a.appendChild(b);
-            }
-        }
-    });
-    /*execute a function presses a key on the keyboard:*/
-    inp.addEventListener("keydown", function(e) {
-        var x = document.getElementById(this.id + "autocomplete-list");
-        if (x) x = x.getElementsByTagName("div");
-        if (e.keyCode == 40) {
-            /*If the arrow DOWN key is pressed,
-            increase the currentFocus variable:*/
-            currentFocus++;
-            /*and and make the current item more visible:*/
-            addActive(x);
-        } else if (e.keyCode == 38) { //up
-            /*If the arrow UP key is pressed,
-            decrease the currentFocus variable:*/
-            currentFocus--;
-            /*and and make the current item more visible:*/
-            addActive(x);
-        } else if (e.keyCode == 13) {
-            /*If the ENTER key is pressed, prevent the form from being submitted,*/
-            e.preventDefault();
-            if (currentFocus > -1) {
-                /*and simulate a click on the "active" item:*/
-                if (x) x[currentFocus].click();
-            }
-        }
-    });
-    function addActive(x) {
-        /*a function to classify an item as "active":*/
-        if (!x) return false;
-        /*start by removing the "active" class on all items:*/
-        removeActive(x);
-        if (currentFocus >= x.length) currentFocus = 0;
-        if (currentFocus < 0) currentFocus = (x.length - 1);
-        /*add class "autocomplete-active":*/
-        x[currentFocus].classList.add("autocomplete-active");
-    }
-    function removeActive(x) {
-        /*a function to remove the "active" class from all autocomplete items:*/
-        for (var i = 0; i < x.length; i++) {
-            x[i].classList.remove("autocomplete-active");
-        }
-    }
-    function closeAllLists(elmnt) {
-        /*close all autocomplete lists in the document,
-        except the one passed as an argument:*/
-        var x = document.getElementsByClassName("autocomplete-items");
-        for (var i = 0; i < x.length; i++) {
-            if (elmnt != x[i] && elmnt != inp) {
-                x[i].parentNode.removeChild(x[i]);
-            }
-        }
-    }
-    /*execute a function when someone clicks in the document:*/
-    document.addEventListener("click", function (e) {
-        closeAllLists(e.target);
-    });
